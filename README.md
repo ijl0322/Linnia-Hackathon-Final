@@ -5,3 +5,5 @@ Latest React and React Router ready to go. Includes Babel plugin for `async` fea
 * React 16
 * React Router 4
 * Babel 6
+
+Test
