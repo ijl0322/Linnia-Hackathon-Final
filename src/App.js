@@ -25,7 +25,7 @@ class App extends Component {
   onInputChangeName = event => {
     //this.props.clearInputError();
     const value = event.target.value;
-    console.log(value);
+    //console.log(value);
 
     this.setState({...this.state, name: value });
   };
@@ -33,7 +33,7 @@ class App extends Component {
   onInputChangeCreditScore = event => {
     //this.props.clearInputError();
     const value = event.target.value;
-    console.log(value);
+    //console.log(value);
 
     this.setState({...this.state, creditScore: value });
   };
@@ -47,7 +47,7 @@ class App extends Component {
     console.log(this.state.creditScore);
     
 
-    this.setState({ name: "", creditScore: "", loading: false });
+    this.setState({ name: "", creditScore: "", loading: false, namep: this.state.name, creditScorep: this.state.creditScore });
   };
 
   async componentDidMount() {
@@ -55,8 +55,9 @@ class App extends Component {
     console.log(await(web3.eth.getAccounts()))
   }
   render() {
+    const { name, creditScore} = this.state
     const {onInputChangeName, onInputChangeCreditScore, onSubmit} = this
-    const funcs = {onInputChangeName, onInputChangeCreditScore, onSubmit}
+    const funcs = {onInputChangeName, onInputChangeCreditScore, onSubmit, name, creditScore}
 
     return(
        
@@ -64,7 +65,7 @@ class App extends Component {
         <Switch>       
           <Route exact path='/' render={() => <ViewAddRecord {...funcs}/>}/>
           <Route exact path='/permission' render={() => <ViewAddPermission />}/>
-          <Route exact path='/thirdparty' render={() => <ThirdParty />}/>         
+          <Route exact path='/thirdparty' render={() => <ThirdParty {...this.state}/>}/>         
         </Switch>
       </Layout>
        

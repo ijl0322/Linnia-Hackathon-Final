@@ -5,7 +5,10 @@ import { Form, Input, Message, Button } from 'semantic-ui-react'
 
 class ViewAddRecord extends Component {
     state = {errorMessage: ""}
-    render () {  
+    render () {
+        const {name,creditScore} = this.props
+        console.log("*****************");
+        console.log(this.props.name); 
         return (
             <div>
             <div className="jumbotron text-center">
@@ -18,17 +21,19 @@ class ViewAddRecord extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Name</label>
                 <div className="col-sm-10">
-                  <p className="form-control-static"><Input
-                    value={this.state.name}
+                  {/* <p className="form-control-static"> */}
+                  <Input
+                    value={name}
                     onChange={this.props.onInputChangeName}    
-                    labelPosition="left"/></p>
+                    labelPosition="left"/>
+                    {/* </p> */}
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Credit Score</label>
                 <div className="col-sm-10">
                   <p className="form-control-static"><Input
-                    value={this.state.creditScore}
+                    value={creditScore}
                     onChange={this.props.onInputChangeCreditScore}    
                     labelPosition="left"/></p>
                 </div>
@@ -39,7 +44,7 @@ class ViewAddRecord extends Component {
                     <small id="fileHelp" class="form-text text-muted">Please upload your most recent tax form</small>
                 </div>
                 <Message error content={this.state.errorMessage} />
-                <Button primary loading={this.state.loading}>
+                <Button primary loading={this.props.loading}>
                 Add New Record
                 </Button>
             </Form>

@@ -4,7 +4,8 @@ import React, {Component} from 'react'
 class ThirdParty extends Component {
 
     render () {       
-        return (
+      const {namep, creditScorep} = this.props
+      return (
             <div>
             <div className="jumbotron text-center">
                 <h1>Third Party Approval Status</h1>
@@ -22,13 +23,13 @@ class ThirdParty extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Name</label>
                 <div className="col-sm-10">
-                  <p className="form-control-static">John Smith</p>
+                  <p className="form-control-static">{namep}</p>
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Credit Score</label>
                 <div className="col-sm-10">
-                  <p className="form-control-static">750</p>
+                  <p className="form-control-static">{creditScorep}</p>
                 </div>
               </div>
               <button type="button" class="btn btn-success">Approve</button>
