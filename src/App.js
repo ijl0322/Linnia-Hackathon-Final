@@ -6,10 +6,10 @@ import Layout from './Layout'
 import Linnia from '@linniaprotocol/linnia-js'
 import Web3 from 'web3'
 import IPFS from 'ipfs-api'
-import ViewRecords from './components/Records/ViewRecords'
-import AddRecord from './components/Records/AddRecord'
-import ViewPermissions from './components/Permissions/ViewPermissions'
-import AddPermission from './components/Permissions/AddPermission'
+import ViewAddRecord from './components/Records/ViewAddRecord'
+import ViewAddPermission from './components/Permissions/ViewAddPermission'
+import ThirdParty from './components/ThirdParty/ThirdParty'
+
 const ipfs = new IPFS({host: 'localhost', port: 5001, protocol: 'http'})
 
 
@@ -26,10 +26,9 @@ class App extends Component {
        
       <Layout>
         <Switch>       
-          <Route exact path='/records' render={() => <ViewRecords />}/>
-          <Route exact path='/addrecord' render={() => <AddRecord />}/>
-          <Route exact path='/permissions' render={() => <ViewPermissions />}/>  
-          <Route exact path='/addpermission' render={() => <AddPermission />}/>       
+          <Route exact path='/record' render={() => <ViewAddRecord />}/>
+          <Route exact path='/permission' render={() => <ViewAddPermission />}/>
+          <Route exact path='/thirdparty' render={() => <ThirdParty />}/>         
         </Switch>
       </Layout>
        

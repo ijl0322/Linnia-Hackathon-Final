@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
  
 const Header = (props) => {
   return (
-    
+   
+// combined View & Add Recrods and View & Add Permissions 
  <div>
- <Link to='/records'><span>View Records</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
- <Link to='/addrecord'><span>Add Record</span></Link>&nbsp;&nbsp; &nbsp;&nbsp;  
- <Link to='/permissions'><span>View Permissions</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
- <Link to='/addpermission'><span>Add Permission</span></Link>       
+ <Link to='/record'><span>View/Add Records</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
+ <Link to='/permission'><span>View/Add Permissions</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
+ <Link to='/thirdparty'><span>Third Party</span></Link>&nbsp;&nbsp; &nbsp;&nbsp;    
 </div>
  
   );
