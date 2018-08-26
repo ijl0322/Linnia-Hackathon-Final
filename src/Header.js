@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return(
     <div>
-      <Link to='/firstRoute'><span>first route</span></Link>
+      <Link to='/records'><span>View Records</span></Link>
       <br></br>
-      <Link to='/secondRoute'><span>second route</span></Link>
+      <Link to='/addrecord'><span>Add Record</span></Link>
     </div>
   )
 }

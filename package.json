@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@linniaprotocol/linnia-js": "^0.1.4",
+    "@material-ui/core": "^1.5.1",
     "babel-polyfill": "^6.26.0",
     "i": "^0.3.6",
     "ipfs-api": "^24.0.1",

@@ -6,6 +6,8 @@ import Header from './Header'
 import Linnia from '@linniaprotocol/linnia-js'
 import Web3 from 'web3'
 import IPFS from 'ipfs-api'
+import ViewRecords from './components/Records/ViewRecords'
+import AddRecord from './components/Records/AddRecord'
 
 const ipfs = new IPFS({host: 'localhost', port: 5001, protocol: 'http'})
 
@@ -22,11 +24,9 @@ class App extends Component {
     return(
       <div>
         <Header/>
-        <Switch>
-          <Route exact path='/' render={() => <div>at /</div>}/>
-          <Route exact path='/firstRoute' render={() => <div>at /firstRoute</div>}/>
-          <Route exact path='/secondRoute' render={() => <div>at /secondRoute</div>}/>
-          <Route render={() => <div>where r u lol</div>}/>
+        <Switch>       
+          <Route exact path='/records' render={() => <ViewRecords />}/>
+          <Route exact path='/addrecord' render={() => <AddRecord />}/>         
         </Switch>
       </div>
     )
