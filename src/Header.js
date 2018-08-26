@@ -7,7 +7,7 @@ const Header = (props) => {
    
 // combined View & Add Recrods and View & Add Permissions 
  <div>
- <Link to='/record'><span>View/Add Records</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
+ <Link to='/'><span>View/Add Records</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
  <Link to='/permission'><span>View/Add Permissions</span></Link>&nbsp;&nbsp; &nbsp;&nbsp; 
  <Link to='/thirdparty'><span>Third Party</span></Link>&nbsp;&nbsp; &nbsp;&nbsp;    
 </div>
