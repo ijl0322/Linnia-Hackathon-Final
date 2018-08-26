@@ -19,7 +19,7 @@ $ npm install
 
 $ npm start
 
-Open a browser and run http://localhost:3000/
+Open a browser and run http://localhost:8080/
 
 
 

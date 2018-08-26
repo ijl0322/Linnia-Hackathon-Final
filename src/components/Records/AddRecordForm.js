@@ -1,51 +1,53 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
- 
+import { Form, Input, Message, Button } from 'semantic-ui-react'
+
 class AddRecordForm extends Component {
-  state = {name: '', creditScore: ''}
+  state = { name: '', creditScore: '', errorMessage: '', loading: false };
 
   onInputChange = property => event => {
     //this.props.clearInputError();
-    const value = event.target.value;   
-    console.log(value)
+    const value = event.target.value;
+    console.log(value);
 
     this.setState({ [property]: value });
   };
-  handleSubmit = event => {
-    event.preventDefault();
-    console.log("++++ AddRecordForm.hadleSubmit name, creditScore ++++++");
-    console.log(this.state.name);
-    console.log(this.state.creditScore);
-    
-    this.setState({name: '', creditScore: ''})
-  };
 
-  //const { classes } = this.props;
+  onSubmit = async event => {
+    event.preventDefault();
+    this.setState({ loading: true, errorMessage: '' });
+
+    // console.log("++++ AddRecordForm.hadleSubmit name, creditScore ++++++");
+    // console.log(this.state.name);
+    // console.log(this.state.creditScore);
+
+    this.setState({ name: "", creditScore: "", loading: false });
+  };
+  
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-        <TextField
-            name="name"
-            required
-            fullWidth          
-            label="Name"           
+      <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
+        <Form.Field>
+          <label>Name</label>
+          <Input
             value={this.state.name}
-            onChange={this.onInputChange("name")}
+            onChange={event => this.setState({ name: event.target.value })}    
+            labelPosition="left"
           />
-          <TextField
-            name="creditScore"
-            required
-            fullWidth          
-            label="Credit Score"           
+        </Form.Field>
+        <Form.Field>
+          <label>Credit Score</label>
+          <Input
             value={this.state.creditScore}
-            onChange={this.onInputChange("creditScore")}
+            onChange={event => this.setState({ creditScore: event.target.value })}           
+            labelPosition="left"
           />
-          <Button type="submit">Add New Record</Button>
-        </form>
-      </div>
+        </Form.Field>
+        <Message error content={this.state.errorMessage} />
+        <Button primary loading={this.state.loading}>
+          Add New Record
+        </Button>
+      </Form>
     );
   }
 }
