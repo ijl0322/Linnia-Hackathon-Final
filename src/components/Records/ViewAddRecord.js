@@ -7,8 +7,7 @@ class ViewAddRecord extends Component {
     state = {errorMessage: ""}
     render () {
         const {name,creditScore} = this.props
-        console.log("*****************");
-        console.log(this.props.name); 
+
         return (
             <div>
             <div className="jumbotron text-center">

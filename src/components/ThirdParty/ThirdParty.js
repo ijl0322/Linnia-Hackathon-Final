@@ -1,9 +1,28 @@
+require('babel-polyfill')
 import React, {Component} from 'react'
+import { isPrimitive } from 'util';
 
 
 class ThirdParty extends Component {
 
-    render () {       
+  constructor() {
+    super()
+    this.state = {
+      creditScore:'',
+      name: ''
+    }
+  }
+
+  async componentDidMount() {
+    const { uri } = this.props
+    const receiverPrivateKey = '0x44ae90da82985a6f3feb058b5bd0d4e1694b4f4e310db584cee9749bc431d021'
+    const receiverAddress = '0x1f6FD2dB216b6F4958Ee00a41a6Cc19B54383B62'
+    console.log('about to get record')
+    const ipfsData = await this.props.getRecord(uri, receiverAddress, receiverPrivateKey)
+    this.setState(ipfsData)
+  }
+
+    render () {
       const {namep, creditScorep} = this.props
       return (
             <div>
@@ -17,19 +36,19 @@ class ThirdParty extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Hash Code</label>
                 <div className="col-sm-10">
-                  <p className="form-control-static">123456789abcdef</p>
+                  <p className="form-control-static">039839f9...</p>
                 </div> 
               </div>  
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Name</label>
                 <div className="col-sm-10">
-                  <p className="form-control-static">{namep}</p>
+                  <p className="form-control-static">{this.state.name}</p>
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label">Credit Score</label>
                 <div className="col-sm-10">
-                  <p className="form-control-static">{creditScorep}</p>
+                  <p className="form-control-static">{this.state.creditScore}</p>
                 </div>
               </div>
               <button type="button" class="btn btn-success">Approve</button>
