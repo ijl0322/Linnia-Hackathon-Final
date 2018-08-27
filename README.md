@@ -7,3 +7,19 @@ Latest React and React Router ready to go. Includes Babel plugin for `async` fea
 * Babel 6
 
 Test
+
+
+To install and run
+
+$ git clone https://github.com/MarkGeeRomano/linnia-hackathon.git
+
+$ cd linnia-hackathon
+
+$ npm install
+
+$ npm start
+
+Open a browser and run http://localhost:8080/
+
+
+

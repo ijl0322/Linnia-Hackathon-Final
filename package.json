@@ -33,13 +33,16 @@
   "dependencies": {
     "@linniaprotocol/linnia-js": "^0.1.4",
     "babel-polyfill": "^6.26.0",
+    "bootstrap": "^3.3.7",
     "i": "^0.3.6",
     "ipfs-api": "^24.0.1",
     "npm": "^6.4.0",
     "react": "^16.4.2",
+    "react-bootstrap": "^0.32.3",
     "react-dom": "^16.4.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "semantic-ui-react": "^0.82.3",
     "web3": "^1.0.0-beta.35"
   }
 }

@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
 import { render } from 'react-dom'
 import App from './App'
-
+console.warn = function() {}
 // console.log({web3, ipfs, linnia})
 
 // web3.eth.getAccounts()
